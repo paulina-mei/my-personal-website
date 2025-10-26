@@ -40,17 +40,24 @@ my-personal-website/
 ├── auto-meta.js                # ⚡ Auto-generates meta tags for articles
 ├── favicon.svg                 # Site favicon (milky pink blob with PM)
 ├── sitemap.xml                 # ⚡ Auto-generated SEO sitemap
-├── create-article.js           # ⚡ Article generator script (Node.js)
-├── generate-sitemap.js         # ⚡ Sitemap generator script
-├── clean-notion-html.js        # ⚡ Notion HTML cleaner script
-├── articles/                   # Individual article pages
-│   └── building-products-users-love.html
-├── resume.pdf                  # Your PDF resume (to be added)
-├── profile.jpg                 # Your profile photo (to be added)
+├── resume.pdf                  # Your PDF resume
+├── profile.jpg                 # Your profile photo (optimized for web)
 ├── README.md                   # This file - main documentation
 ├── QUICK-START.md              # Fast setup guide
 ├── CHANGELOG.md                # Version history and changes
-└── docs/                       # Detailed guides (see above for list)
+├── articles/                   # Individual article pages
+│   └── my-job-is-internet.html
+├── docs/                       # Detailed documentation guides
+│   ├── ARTICLE-GENERATOR.md
+│   ├── NOTION-TO-ARTICLE.md
+│   ├── ADDING-ARTICLES.md
+│   ├── DEPLOYMENT-GUIDE.md
+│   └── ... (more guides)
+├── scripts/                    # Utility scripts
+│   ├── create-article.js       # ⚡ Article generator (Node.js)
+│   ├── generate-sitemap.js     # ⚡ Sitemap generator
+│   └── clean-notion-html.js    # ⚡ Notion HTML cleaner
+└── backups/                    # Original files (gitignored)
 ```
 
 ### Key Files Explained
@@ -154,12 +161,12 @@ Making website maintenance effortless:
    - No manual URL updates in articles
 
 4. **Article generator script** ✍️
-   - Run `node create-article.js`
+   - Run `node scripts/create-article.js`
    - Answer prompts, paste content
    - HTML file and search index auto-created
 
 5. **Sitemap auto-generation** 🗺️
-   - Run `node generate-sitemap.js`
+   - Run `node scripts/generate-sitemap.js`
    - Includes all articles automatically
    - Ready for Google Search Console
 
@@ -226,8 +233,8 @@ http-server
 
 1. Write your article in Notion (better writing experience!)
 2. Export as HTML from Notion
-3. Clean the HTML: `node clean-notion-html.js notion-export.html`
-4. Run article generator: `node create-article.js`
+3. Clean the HTML: `node scripts/clean-notion-html.js notion-export.html`
+4. Run article generator: `node scripts/create-article.js`
 5. Paste the cleaned HTML
 
 See [docs/NOTION-TO-ARTICLE.md](docs/NOTION-TO-ARTICLE.md) for complete Notion workflow.
@@ -235,7 +242,7 @@ See [docs/NOTION-TO-ARTICLE.md](docs/NOTION-TO-ARTICLE.md) for complete Notion w
 **🎨 Quick Way: Article Generator Script**
 
 ```bash
-node create-article.js
+node scripts/create-article.js
 ```
 
 The script will:

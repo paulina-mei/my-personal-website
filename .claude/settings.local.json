@@ -6,7 +6,17 @@
       "Bash(chmod:*)",
       "Bash(node:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Read(//Users/paulina.mei/**)",
+      "Bash(git remote set-url:*)",
+      "Bash(sips:*)",
+      "Bash(nslookup:*)",
+      "Bash(dig:*)"
     ],
     "deny": [],
     "ask": []

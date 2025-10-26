@@ -19,20 +19,20 @@ The absolute fastest way to get started with your personal website.
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  Step 3: Clean Notion HTML                                  │
-│  🧹  node clean-notion-html.js notion-export.html           │
+│  🧹  node scripts/clean-notion-html.js notion-export.html   │
 │  ⏱️  Time: 10 seconds                                       │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  Step 4: Generate Article                                   │
-│  🎨  node create-article.js                                 │
+│  🎨  node scripts/create-article.js                         │
 │  📋  Enter title, description, date, paste HTML             │
 │  ⏱️  Time: 2 minutes                                        │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  Step 5: Update Sitemap & Deploy                            │
-│  🗺️  node generate-sitemap.js                              │
+│  🗺️  node scripts/generate-sitemap.js                      │
 │  🚀  git add . && git commit -m "New article" && git push   │
 │  ⏱️  Time: 1 minute                                         │
 └─────────────────────────────────────────────────────────────┘
@@ -50,13 +50,13 @@ The absolute fastest way to get started with your personal website.
 
 ```bash
 # 1. Clean Notion export
-node clean-notion-html.js your-export.html
+node scripts/clean-notion-html.js your-export.html
 
 # 2. Generate article (follow prompts)
-node create-article.js
+node scripts/create-article.js
 
 # 3. Update sitemap
-node generate-sitemap.js
+node scripts/generate-sitemap.js
 
 # 4. Deploy
 git add .
@@ -84,7 +84,7 @@ python3 -m http.server 8000
 ├── 🎨 styles.css          - All styling
 ├── ⚙️ script.js           - Navigation
 │
-├── 🤖 Automation Scripts
+├── 📁 scripts/            - Automation tools
 │   ├── create-article.js       - Generate articles
 │   ├── clean-notion-html.js    - Clean Notion exports
 │   └── generate-sitemap.js     - Create sitemap.xml
@@ -124,9 +124,9 @@ Starting from scratch? Here's what to do:
 ### After Each Article
 
 - [ ] Export from Notion as HTML
-- [ ] Run `clean-notion-html.js`
-- [ ] Run `create-article.js`
-- [ ] Run `generate-sitemap.js`
+- [ ] Run `node scripts/clean-notion-html.js`
+- [ ] Run `node scripts/create-article.js`
+- [ ] Run `node scripts/generate-sitemap.js`
 - [ ] Commit and push
 - [ ] Verify live site
 
@@ -205,7 +205,7 @@ cd /Users/paulina.mei/my-personal-website
 
 ### Notion HTML looks wrong
 
-- Use the `clean-notion-html.js` script
+- Use the `node scripts/clean-notion-html.js` script
 - Make sure you exported as HTML (not Markdown)
 - Remove the `<h1>` title manually if needed
 
