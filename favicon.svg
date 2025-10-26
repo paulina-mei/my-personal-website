@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Organic blob shape background -->
+  <path d="M50,10 C65,10 75,15 85,25 C95,35 100,45 98,60 C96,75 88,85 75,90 C62,95 45,95 32,88 C19,81 10,70 8,55 C6,40 12,25 25,15 C38,5 42,10 50,10 Z"
+        fill="#ffc4d6"
+        stroke="none"/>
+
+  <!-- PM text -->
+  <text x="50"
+        y="65"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-size="45"
+        font-weight="700"
+        fill="#0a0a0a"
+        text-anchor="middle">PM</text>
+</svg>
