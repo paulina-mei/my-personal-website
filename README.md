@@ -304,11 +304,18 @@ Edit CSS variables in `styles.css` (lines 8-28):
 
 ### Adjust Layout Widths
 
-- Main content container: `.main-content { max-width: 950px; }` (line 165)
-- Profile image width: `.main-section .profile-pic { width: 550px; }` (line 180)
-- Spacing between image and text: `.main-content { gap: 3rem; }` (line 169)
-- Writing archive: `.writing-archive .container { max-width: 800px; }` (line 342)
-- Article pages: `.article-page .container { max-width: 720px; }` (line 420)
+- Main content container: `.main-content { max-width: 950px; }` (line 176)
+- Profile image width: `.main-section .profile-pic { width: 550px; }` (line 191)
+- Spacing between image and text: `.main-content { gap: 3rem; }` (line 179)
+- Writing archive: `.writing-archive .container { max-width: 800px; }` (line 516)
+- Article pages: `.article-page .container { max-width: 720px; }` (line 602)
+
+### Responsive Design
+
+The website uses a mobile-first responsive approach:
+- **Desktop**: Two-column flexbox layout (550px image + bio text)
+- **Tablet (≤768px)**: Single column, image centered (max 400px), bio text padded (1.5rem)
+- **Mobile (≤480px)**: Single column, image centered (max 280px), bio text padded (1rem)
 
 ### Infinite Scroll Settings
 

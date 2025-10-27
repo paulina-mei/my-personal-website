@@ -56,16 +56,22 @@ Total container width: `950px`
 ## Responsive Breakpoints
 
 ### Tablet (max-width: 768px)
-- Layout switches to **single column**
-- Profile image centered
-- Image max-width: `240px`
+- Layout switches to **single column** (flex-direction: column)
+- Profile image **centered** using flexbox
+- Image max-width: `400px`
 - Gap: `2.5rem` (between stacked elements)
+- Bio text padding: `0 1.5rem` (horizontal padding for breathing room)
+- Sticky positioning removed (position: static)
+- Image stacks on top, bio text below
 
 ### Mobile (max-width: 480px)
-- Single column maintained
-- Profile image centered
-- Image max-width: `180px`
+- Single column maintained (flex-direction: column)
+- Profile image **centered** using flexbox
+- Image max-width: `280px`
 - Gap: `2rem` (between stacked elements)
+- Bio text padding: `0 1rem` (horizontal padding for breathing room)
+- Sticky positioning removed (position: static)
+- Image stacks on top, bio text below
 
 ## Color Reference
 

@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2025-10-27 - Responsive Layout Improvements 📱
+
+### Changed
+- **Improved Mobile & Tablet Responsive Layout**
+  - Fixed profile image centering on mobile and tablet devices
+  - Profile image now properly stacks on top of bio text in single-column layout
+  - Updated tablet breakpoint (≤768px): Image max-width increased to 400px (was 240px)
+  - Updated mobile breakpoint (≤480px): Image max-width increased to 280px (was 180px)
+  - Added horizontal padding to bio text for better spacing:
+    - Tablet: 1.5rem padding
+    - Mobile: 1rem padding
+  - Changed layout from grid to flexbox (flex-direction: column) for consistent stacking
+  - Removed sticky positioning on mobile for natural scrolling
+  - Image container uses flexbox centering (justify-content: center)
+
+### Fixed
+- Article description in `writing-search.js` now matches updated article content
+- Homepage blog section now displays correct article description
+- Removed placeholder "Building Products Users Love" article from search data
+
+### Documentation
+- Updated `LAYOUT.md` with accurate responsive breakpoint specifications
+- Updated `README.md` with responsive design section and corrected CSS line numbers
+- Updated `CHANGELOG.md` with all recent changes
+
 ## [1.1.0] - 2025-10-26 - Automation Release ⚡
 
 ### Added - Automation Features
