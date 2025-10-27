@@ -834,17 +834,27 @@ body {
     }
 
     .main-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 2.5rem;
+        align-items: center;
     }
 
     .profile-image {
         position: static;
-        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .profile-pic {
-        max-width: 240px;
+    .main-section .profile-pic {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .main-text {
+        width: 100%;
+        padding: 0 1.5rem;
     }
 
     .blog-link {
@@ -918,16 +928,27 @@ body {
     }
 
     .main-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 2rem;
+        align-items: center;
     }
 
     .profile-image {
-        text-align: center;
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .profile-pic {
-        max-width: 180px;
+    .main-section .profile-pic {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .main-text {
+        width: 100%;
+        padding: 0 1rem;
     }
 
     .bio p {
