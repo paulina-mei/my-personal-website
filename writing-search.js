@@ -10,8 +10,8 @@ function formatDate(isoDate) {
 const allArticles = [
     {
         title: "My job is internet",
-        description: "I used to be internet famous, and now I help other people become internet famous—which might be the perfect ending to that story.",
-        content: "Content goes here...",
+        description: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences—which might be the perfect ending to that story.",
+        content: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences. Growth means being uncomfortable. Writing more, going to events, trying new hobbies. Tumblr fame, Pokemon memes, streaming. The best way to stay on the internet isn't to be the star—it's to help others shine while keeping a little mystery for yourself.",
         url: "articles/my-job-is-internet.html",
         date: "2025-10-26"
     }
