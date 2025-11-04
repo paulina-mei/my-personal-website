@@ -53,14 +53,14 @@ function generateArticleHTML(title, description, url, date, content) {
     <title>${title} | Paulina Mei</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://paulinamei.com/articles/${url}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
-    <meta property="og:image" content="https://paulinamei.com/profile.jpg">
+    <meta property="og:image" content="https://paulinamei.com/assets/profile.jpg">
     <meta property="article:published_time" content="${date}T00:00:00Z">
     <meta property="article:author" content="Paulina Mei">
 
@@ -69,7 +69,7 @@ function generateArticleHTML(title, description, url, date, content) {
     <meta property="twitter:url" content="https://paulinamei.com/articles/${url}">
     <meta property="twitter:title" content="${title}">
     <meta property="twitter:description" content="${description}">
-    <meta property="twitter:image" content="https://paulinamei.com/profile.jpg">
+    <meta property="twitter:image" content="https://paulinamei.com/assets/profile.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://paulinamei.com/articles/${url}">
@@ -146,7 +146,7 @@ function generateArticleHTML(title, description, url, date, content) {
         </div>
     </footer>
 
-    <script src="../auto-meta.js"></script>
+    <script src="../js/auto-meta.js"></script>
     <script src="../script.js"></script>
     <script>
         // Auto-update copyright year
@@ -184,7 +184,7 @@ async function main() {
         // Generate URL slug
         const slug = slugify(title);
         const filename = `${slug}.html`;
-        const filepath = path.join(__dirname, 'articles', filename);
+        const filepath = path.join(__dirname, '..', 'articles', filename);
 
         // Generate searchable content (strip HTML tags)
         const searchableContent = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -197,7 +197,7 @@ async function main() {
         console.log(`\n✅ Created: articles/${filename}`);
 
         // Update writing-search.js
-        const searchFilePath = path.join(__dirname, 'writing-search.js');
+        const searchFilePath = path.join(__dirname, '..', 'js', 'writing-search.js');
         let searchFileContent = fs.readFileSync(searchFilePath, 'utf8');
 
         const newArticle = `    {
@@ -215,7 +215,7 @@ async function main() {
         );
 
         fs.writeFileSync(searchFilePath, searchFileContent);
-        console.log(`✅ Updated: writing-search.js\n`);
+        console.log(`✅ Updated: js/writing-search.js\n`);
 
         console.log('🎉 Article created successfully!\n');
         console.log('Next steps:');
