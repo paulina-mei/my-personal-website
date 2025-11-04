@@ -13,6 +13,13 @@
 
 const allArticles = [
     {
+        "title": "Testing the Auto-Generation System",
+        "description": "A quick test to verify that our new auto-generation workflow eliminates content duplication and keeps everything in sync.",
+        "content": "This is a test article to demonstrate our new auto-generation system. No more manual duplication! How It Works When you create an article, the system now automatically extracts all the data from the HTML file. This means you only maintain content in one place - the article HTML file itself. The generate-search-data.js script scans all article HTML files, extracts the title, description, date, and content, then builds the search index automatically. Key Benefits No more content duplication - Edit",
+        "url": "articles/testing-auto-generation-system.html",
+        "date": "2025-11-04"
+    },
+    {
         "title": "My job is internet",
         "description": "I used to be internet famous, and now I help other people become internet famous—which might be the perfect ending to that story.",
         "content": "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences—which might be the perfect ending to that story. One way to measure growth is to be uncomfortable. I've been forcing myself to get out of my comfort zone this past year: going to more events, trying new hobbies, doing more things by myself, and most importantly, writing more. (Sure, it's AI-assisted, but I promise I always write the first draft myself!) And thus, I dec",

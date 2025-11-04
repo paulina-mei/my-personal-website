@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A quick test to verify that our new auto-generation workflow eliminates content duplication and keeps everything in sync.">
+    <title>Testing the Auto-Generation System | Paulina Mei</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://paulinamei.com/articles/testing-auto-generation-system.html">
+    <meta property="og:title" content="Testing the Auto-Generation System">
+    <meta property="og:description" content="A quick test to verify that our new auto-generation workflow eliminates content duplication and keeps everything in sync.">
+    <meta property="og:image" content="https://paulinamei.com/assets/profile.jpg">
+    <meta property="article:published_time" content="2025-11-04T00:00:00Z">
+    <meta property="article:author" content="Paulina Mei">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://paulinamei.com/articles/testing-auto-generation-system.html">
+    <meta property="twitter:title" content="Testing the Auto-Generation System">
+    <meta property="twitter:description" content="A quick test to verify that our new auto-generation workflow eliminates content duplication and keeps everything in sync.">
+    <meta property="twitter:image" content="https://paulinamei.com/assets/profile.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://paulinamei.com/articles/testing-auto-generation-system.html">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="../index.html" class="logo">Paulina Mei</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../writing.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="article-page">
+        <div class="container">
+            <header class="article-header">
+                <a href="../writing.html" class="back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to All Posts
+                </a>
+                <h1 class="article-title">Testing the Auto-Generation System</h1>
+                <div class="article-meta">
+                    <time datetime="2025-11-04">November 4, 2025</time>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p class="article-lead">
+                    This is a test article to demonstrate our new auto-generation system. No more manual duplication!
+                </p>
+
+                <h2>How It Works</h2>
+                <p>
+                    When you create an article, the system now automatically extracts all the data from the HTML file. This means you only maintain content in one place - the article HTML file itself.
+                </p>
+                <p>
+                    The <code>generate-search-data.js</code> script scans all article HTML files, extracts the title, description, date, and content, then builds the search index automatically.
+                </p>
+
+                <h2>Key Benefits</h2>
+                <ul>
+                    <li><strong>No more content duplication</strong> - Edit once, propagates everywhere</li>
+                    <li><strong>Always in sync</strong> - Can't get out of sync anymore</li>
+                    <li><strong>Automatic date sorting</strong> - Newest articles appear first</li>
+                    <li><strong>Easy to update</strong> - Just edit HTML and regenerate</li>
+                    <li><strong>Single source of truth</strong> - Article HTML is authoritative</li>
+                </ul>
+
+                <h2>The Workflow</h2>
+                <p>
+                    Creating or updating articles is now incredibly simple:
+                </p>
+                <ol>
+                    <li>Create or edit your article HTML file</li>
+                    <li>Run <code>node scripts/generate-search-data.js</code></li>
+                    <li>Done! Your search index is updated</li>
+                </ol>
+                <p>
+                    Or even better, use <code>create-article.js</code> which does everything automatically, including running the generator script for you.
+                </p>
+
+                <h2>The Result</h2>
+                <p>
+                    A cleaner, more maintainable website that scales effortlessly. Article HTML files are now the single source of truth, and everything else is auto-generated from them.
+                </p>
+                <p>
+                    This eliminates an entire class of maintenance issues and makes the website much easier to manage as it grows.
+                </p>
+            </div>
+
+            <footer class="article-footer">
+                <a href="../writing.html" class="back-link-footer">← Back to All Posts</a>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Paulina Mei. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="mailto:paulinaxmei@gmail.com" class="social-link" aria-label="Email Paulina Mei">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/paulinamei/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auto-meta.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Auto-update copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
