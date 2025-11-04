@@ -6,7 +6,7 @@
  * This script automates the creation of new blog articles:
  * 1. Prompts for article details (title, description, date, content)
  * 2. Generates HTML file with all meta tags filled in
- * 3. Automatically adds entry to writing-search.js
+ * 3. Automatically regenerates js/writing-search.js from all articles
  *
  * Usage: node create-article.js
  */
@@ -14,6 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+const { execSync } = require('child_process');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -196,26 +197,18 @@ async function main() {
         fs.writeFileSync(filepath, html);
         console.log(`\n✅ Created: articles/${filename}`);
 
-        // Update writing-search.js
-        const searchFilePath = path.join(__dirname, '..', 'js', 'writing-search.js');
-        let searchFileContent = fs.readFileSync(searchFilePath, 'utf8');
-
-        const newArticle = `    {
-        title: "${title}",
-        description: "${description}",
-        content: "${searchableContent.substring(0, 200)}...",
-        url: "articles/${filename}",
-        date: "${date}"
-    },`;
-
-        // Insert new article at the beginning of the array
-        searchFileContent = searchFileContent.replace(
-            /const allArticles = \[\n/,
-            `const allArticles = [\n${newArticle}\n`
-        );
-
-        fs.writeFileSync(searchFilePath, searchFileContent);
-        console.log(`✅ Updated: js/writing-search.js\n`);
+        // Auto-generate search data from all articles
+        console.log('🔍 Regenerating search data...');
+        try {
+            const scriptPath = path.join(__dirname, 'generate-search-data.js');
+            execSync(`node "${scriptPath}"`, {
+                stdio: 'inherit',
+                cwd: __dirname
+            });
+        } catch (error) {
+            console.error('⚠️  Warning: Could not regenerate search data');
+            console.error('   Run manually: node scripts/generate-search-data.js');
+        }
 
         console.log('🎉 Article created successfully!\n');
         console.log('Next steps:');

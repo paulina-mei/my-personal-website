@@ -2,6 +2,15 @@
 
 Complete guide for creating and publishing blog articles on your website.
 
+## 🎯 Important: No More Manual Duplication!
+
+Your website now uses **automatic search data generation**. You only need to create/edit article HTML files - the search data is generated automatically!
+
+**What changed:**
+- ✅ `js/writing-search.js` is now **auto-generated** - DO NOT edit manually
+- ✅ Article HTML files are the **single source of truth**
+- ✅ No more syncing content between two files!
+
 ## Quick Start (Recommended Method)
 
 The easiest way to create articles is using the article generator script:
@@ -21,10 +30,24 @@ The script will prompt you for:
 - ✅ Generates complete HTML file with all meta tags
 - ✅ Creates URL-friendly filename
 - ✅ Adds Open Graph & Twitter Card meta tags
-- ✅ Updates `js/writing-search.js` with your article
-- ✅ Positions your article at the top (most recent)
+- ✅ **Auto-regenerates** `js/writing-search.js` from all articles
+- ✅ Sorts articles by date (newest first)
 
 Your article will automatically appear on the homepage and in the blog archive!
+
+### How Auto-Generation Works
+
+When you create or update articles, the system:
+1. Reads all HTML files in `/articles/` folder
+2. Extracts title, description, date, and content
+3. Generates `js/writing-search.js` with all articles
+4. Automatically sorts by date (newest first)
+
+**Benefits:**
+- ✅ No manual editing of `js/writing-search.js`
+- ✅ No content duplication
+- ✅ Always in sync
+- ✅ Automatic sorting by date
 
 ---
 
@@ -199,28 +222,22 @@ If you prefer full control, you can add articles manually:
    - Article content
    - Date
 
-### Step 2: Add to `js/writing-search.js`
+### Step 2: Regenerate Search Data
 
-Add your article **at the TOP** of the array:
+After creating your article HTML file, regenerate the search data:
 
-```javascript
-const allArticles = [
-    {
-        title: "Your New Article Title",
-        description: "Brief 1-2 sentence description",
-        content: "Searchable text from your article...",
-        url: "articles/your-new-article.html",
-        date: "2025-11-15"  // ISO format (YYYY-MM-DD)
-    },
-    // ← Existing articles below
-    {
-        title: "Existing Article",
-        // ...
-    }
-];
+```bash
+cd scripts
+node generate-search-data.js
 ```
 
-**Important:** Always add new articles to the **top** of the array!
+**What this does:**
+- Scans all articles in `/articles/` folder
+- Extracts title, description, date, and content
+- Auto-generates `js/writing-search.js`
+- Sorts articles by date (newest first)
+
+**Important:** Never edit `js/writing-search.js` manually - always regenerate it!
 
 ---
 
@@ -237,23 +254,23 @@ const recentArticles = allArticles.slice(0, 3);
 
 ### Article Order
 
-- Articles at the **top** of the array are considered most recent
-- Homepage shows positions [0], [1], [2] (first 3)
+- Articles are **automatically sorted by date** (newest first)
+- Homepage shows the 3 most recent articles
 - Blog archive shows all articles
-- Always add new articles to the **top**
+- No manual ordering needed!
 
 ### Date Formatting
 
-- Use ISO format: `"2025-11-15"` (YYYY-MM-DD)
+- Use ISO format in HTML `<time datetime="2025-11-15">`
 - Automatically displays as "Nov 2025" on the site
-- No manual formatting needed!
+- Generator script extracts dates automatically
 
 ### Search Functionality
 
-The `content` field enables search:
-- Copy key phrases from your article
-- Doesn't need to be the full article
-- Just include searchable keywords
+- Content is **auto-extracted** from article HTML
+- First 500 characters used for search
+- Includes title, description, and article text
+- No manual content copying needed!
 
 ---
 
@@ -271,36 +288,66 @@ After adding an article:
 ## Troubleshooting
 
 **Article isn't showing on homepage**
-- Make sure it's at the TOP of the `allArticles` array
-- Check file path is correct
+- Run `node scripts/generate-search-data.js` to regenerate search data
+- Check that article date is set correctly in HTML
 - Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
 
 **Homepage shows old articles**
+- Regenerate search data: `node scripts/generate-search-data.js`
 - Clear browser cache
-- Check order in `js/writing-search.js`
+- Check article dates in HTML files
 
 **Search isn't finding article**
-- Add relevant keywords to `content` field
-- Check spelling in title and description
+- Regenerate search data to pick up latest content
+- Check that article has text in `<div class="article-content">`
+- Verify article file is in `articles/` folder
 
 **Article link is broken (404)**
-- Verify URL in `js/writing-search.js` matches filename
 - Check file is in `articles/` folder
-- Look for typos
+- Verify filename matches URL
+- Regenerate search data if needed
 
 **Script says "command not found"**
 - Make sure Node.js is installed: `node --version`
 - Run from project root or `scripts/` directory
+
+**Changes to article not showing**
+- After editing an article HTML file, run: `node scripts/generate-search-data.js`
+- This updates the search index with your changes
 
 ---
 
 ## Best Practices
 
 1. **Write in Notion first** - Better writing experience
-2. **Use the generator** - Saves time and prevents errors
-3. **Test locally** - View in browser before deploying
-4. **Keep it simple** - Use basic formatting
-5. **Update sitemap** - Run `node generate-sitemap.js` after adding articles
+2. **Use create-article.js** - Automatically generates everything
+3. **Never edit js/writing-search.js** - Always auto-generate it
+4. **Test locally** - View in browser before deploying
+5. **Keep it simple** - Use basic formatting
+6. **Update after edits** - Run `generate-search-data.js` if you edit article HTML
+
+---
+
+## Regenerating Search Data
+
+If you ever edit article HTML files directly or need to refresh the search index:
+
+```bash
+cd scripts
+node generate-search-data.js
+```
+
+This will:
+- ✅ Scan all articles in `/articles/`
+- ✅ Extract current data from HTML
+- ✅ Regenerate `js/writing-search.js`
+- ✅ Sort by date automatically
+
+**When to regenerate:**
+- After editing article content
+- After changing article titles/descriptions
+- After adding articles manually (without create-article.js)
+- If search seems out of sync
 
 ---
 
@@ -310,6 +357,8 @@ After adding an article:
 - **Keep template** - Use consistent structure
 - **Save Notion link** - Easy to update later
 - **Pre-write content** - Have it ready before running script
+- **Single source of truth** - Article HTML files are authoritative
+- **Let scripts do the work** - Don't manually edit generated files
 
 ---
 
