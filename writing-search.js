@@ -9,6 +9,13 @@ function formatDate(isoDate) {
 // Use ISO date format (YYYY-MM-DD) - dates will be auto-formatted to "Month Year"
 const allArticles = [
     {
+        title: "Waiting for a chance is just procrastination with better branding",
+        description: "Waiting for someone to give you that chance is just procrastination with better branding. How AI tools are changing what it means to break into product management.",
+        content: "Breaking into product management. Proving you can do this. AI tools, portfolio building, validation, iteration. Building hero sections, reskinning schools, embed generators, certificate generators. Play not grind. Junior PMs, job market, shape-shifting role. Computer twenty bucks unhinged. Full team designers engineers analysts discovery building testing. Inflection point product lifecycle reasoning data analysis editor collaborator. Curiosity overeager assistant POC enrollments CSS customization WYSIWYG fields. Perfect team perfect role perfect moment weird bad laugh.",
+        url: "articles/waiting-for-a-chance.html",
+        date: "2025-11-07"
+    },
+    {
         title: "My job is internet",
         description: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences—which might be the perfect ending to that story.",
         content: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences. Growth means being uncomfortable. Writing more, going to events, trying new hobbies. Tumblr fame, Pokemon memes, streaming. The best way to stay on the internet isn't to be the star—it's to help others shine while keeping a little mystery for yourself.",
