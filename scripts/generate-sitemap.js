@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Import articles from writing-search.js
-const writingSearchPath = path.join(__dirname, 'writing-search.js');
+const writingSearchPath = path.join(__dirname, '..', 'writing-search.js');
 const writingSearchContent = fs.readFileSync(writingSearchPath, 'utf8');
 
 // Extract articles array using regex (simple approach)
@@ -86,7 +86,7 @@ function main() {
 
     try {
         const sitemap = generateSitemap();
-        const outputPath = path.join(__dirname, 'sitemap.xml');
+        const outputPath = path.join(__dirname, '..', 'sitemap.xml');
 
         fs.writeFileSync(outputPath, sitemap);
 

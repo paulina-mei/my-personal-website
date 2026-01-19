@@ -12,21 +12,21 @@ const allArticles = [
         title: "You're not the problem. Your goals are trash.",
         description: "Your problem isn't \"motivation\"—it's vague, rigid, boring goals, and you can fix that by rewriting what you measure and actually rewarding yourself along the way.",
         content: "Goals are trash. Vague goals empty containers. SMART goals feelings emotional charge. Measure goals brittle systems movement flexible. Unmotivating goals discipline bribery treats massage dessert gadget takeout. Zero to one project iterate scope metrics. New year fresh start lazy terrible impossible progress. Be rich be fit eat better savings fitness health. Work out walking yoga movement furniture. Be healthier save money network beige wall slog. Treat milestone prototype win OKR performance review outcomes fun.",
-        url: "articles/youre-not-the-problem-your-goals-are-trash.html",
+        url: "articles/youre-not-the-problem-your-goals-are-trash/",
         date: "2026-01-19"
     },
     {
         title: "Waiting for a chance is just procrastination with better branding",
         description: "How AI tools are changing what it means to break into product management.",
         content: "Breaking into product management. Proving you can do this. AI tools, portfolio building, validation, iteration. Building hero sections, reskinning schools, embed generators, certificate generators. Play not grind. Junior PMs, job market, shape-shifting role. Computer twenty bucks unhinged. Full team designers engineers analysts discovery building testing. Inflection point product lifecycle reasoning data analysis editor collaborator. Curiosity overeager assistant POC enrollments CSS customization WYSIWYG fields. Perfect team perfect role perfect moment weird bad laugh.",
-        url: "articles/waiting-for-a-chance.html",
+        url: "articles/waiting-for-a-chance/",
         date: "2025-11-07"
     },
     {
         title: "My job is internet",
         description: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences—which might be the perfect ending to that story.",
         content: "I used to be internet famous, and now I help internet-famous people stay authentic and actually deliver value to their audiences. Growth means being uncomfortable. Writing more, going to events, trying new hobbies. Tumblr fame, Pokemon memes, streaming. The best way to stay on the internet isn't to be the star—it's to help others shine while keeping a little mystery for yourself.",
-        url: "articles/my-job-is-internet.html",
+        url: "articles/my-job-is-internet/",
         date: "2025-10-26"
     }
     // Add more articles here as needed
@@ -36,7 +36,7 @@ const allArticles = [
     //     title: "Your New Article",
     //     description: "Brief description here",
     //     content: "Searchable content here",
-    //     url: "articles/your-new-article.html",
+    //     url: "articles/your-new-article/",
     //     date: "2025-11-01"
     // },
 ];

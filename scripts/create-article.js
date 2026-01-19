@@ -53,7 +53,7 @@ function generateArticleHTML(title, description, url, date, content) {
     <title>${title} | Paulina Mei</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -74,7 +74,7 @@ function generateArticleHTML(title, description, url, date, content) {
     <!-- Canonical URL -->
     <link rel="canonical" href="https://paulinamei.com/articles/${url}">
 
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -146,8 +146,8 @@ function generateArticleHTML(title, description, url, date, content) {
         </div>
     </footer>
 
-    <script src="../auto-meta.js"></script>
-    <script src="../script.js"></script>
+    <script src="../../auto-meta.js"></script>
+    <script src="../../script.js"></script>
     <script>
         // Auto-update copyright year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -183,28 +183,33 @@ async function main() {
 
         // Generate URL slug
         const slug = slugify(title);
-        const filename = `${slug}.html`;
-        const filepath = path.join(__dirname, 'articles', filename);
+        const articleDir = path.join(__dirname, '..', 'articles', slug);
+        const filepath = path.join(articleDir, 'index.html');
+
+        // Create article directory if it doesn't exist
+        if (!fs.existsSync(articleDir)) {
+            fs.mkdirSync(articleDir, { recursive: true });
+        }
 
         // Generate searchable content (strip HTML tags)
         const searchableContent = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
         // Create article HTML
-        const html = generateArticleHTML(title, description, filename, date, content.trim());
+        const html = generateArticleHTML(title, description, slug, date, content.trim());
 
         // Write HTML file
         fs.writeFileSync(filepath, html);
-        console.log(`\n✅ Created: articles/${filename}`);
+        console.log(`\n✅ Created: articles/${slug}/index.html`);
 
         // Update writing-search.js
-        const searchFilePath = path.join(__dirname, 'writing-search.js');
+        const searchFilePath = path.join(__dirname, '..', 'writing-search.js');
         let searchFileContent = fs.readFileSync(searchFilePath, 'utf8');
 
         const newArticle = `    {
         title: "${title}",
         description: "${description}",
         content: "${searchableContent.substring(0, 200)}...",
-        url: "articles/${filename}",
+        url: "articles/${slug}/",
         date: "${date}"
     },`;
 
@@ -219,7 +224,7 @@ async function main() {
 
         console.log('🎉 Article created successfully!\n');
         console.log('Next steps:');
-        console.log(`1. Edit articles/${filename} to refine your content`);
+        console.log(`1. Edit articles/${slug}/index.html to refine your content`);
         console.log('2. Test your article by opening it in a browser');
         console.log('3. Check the homepage to see it in the blog section\n');
 
