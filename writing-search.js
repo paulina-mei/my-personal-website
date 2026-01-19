@@ -9,6 +9,13 @@ function formatDate(isoDate) {
 // Use ISO date format (YYYY-MM-DD) - dates will be auto-formatted to "Month Year"
 const allArticles = [
     {
+        title: "You're not the problem. Your goals are trash.",
+        description: "Every January, my feeds fill up with 'new year, new me' posts, and every January I'm reminded that most of us are recycling the same terrible goals and expecting different results.",
+        content: "Goals are trash. Vague goals empty containers. SMART goals feelings emotional charge. Measure goals brittle systems movement flexible. Unmotivating goals discipline bribery treats massage dessert gadget takeout. Zero to one project iterate scope metrics. New year fresh start lazy terrible impossible progress. Be rich be fit eat better savings fitness health. Work out walking yoga movement furniture. Be healthier save money network beige wall slog. Treat milestone prototype win OKR performance review outcomes fun.",
+        url: "articles/youre-not-the-problem-your-goals-are-trash.html",
+        date: "2026-01-19"
+    },
+    {
         title: "Waiting for a chance is just procrastination with better branding",
         description: "How AI tools are changing what it means to break into product management.",
         content: "Breaking into product management. Proving you can do this. AI tools, portfolio building, validation, iteration. Building hero sections, reskinning schools, embed generators, certificate generators. Play not grind. Junior PMs, job market, shape-shifting role. Computer twenty bucks unhinged. Full team designers engineers analysts discovery building testing. Inflection point product lifecycle reasoning data analysis editor collaborator. Curiosity overeager assistant POC enrollments CSS customization WYSIWYG fields. Perfect team perfect role perfect moment weird bad laugh.",
