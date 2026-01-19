@@ -10,7 +10,7 @@ function formatDate(isoDate) {
 const allArticles = [
     {
         title: "You're not the problem. Your goals are trash.",
-        description: "Every January, my feeds fill up with 'new year, new me' posts, and every January I'm reminded that most of us are recycling the same terrible goals and expecting different results.",
+        description: "Your problem isn't "motivation"—it's vague, rigid, boring goals, and you can fix that by rewriting what you measure and actually rewarding yourself along the way.",
         content: "Goals are trash. Vague goals empty containers. SMART goals feelings emotional charge. Measure goals brittle systems movement flexible. Unmotivating goals discipline bribery treats massage dessert gadget takeout. Zero to one project iterate scope metrics. New year fresh start lazy terrible impossible progress. Be rich be fit eat better savings fitness health. Work out walking yoga movement furniture. Be healthier save money network beige wall slog. Treat milestone prototype win OKR performance review outcomes fun.",
         url: "articles/youre-not-the-problem-your-goals-are-trash.html",
         date: "2026-01-19"
