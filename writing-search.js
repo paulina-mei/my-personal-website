@@ -9,6 +9,13 @@ function formatDate(isoDate) {
 // Use ISO date format (YYYY-MM-DD) - dates will be auto-formatted to "Month Year"
 const allArticles = [
     {
+        title: "AI doesn't know about the orange foods",
+        description: "As AI commoditizes content, your edge isn't efficiency — it's the specific, weird, finite thing that is you.",
+        content: "Humanness superpower. AI agentic commoditized content. Double down flaws interests strengths irreducibly themselves. Opposable thumbs finite life prioritize feelings sights sounds. Malaise mentally unwell antibiotic breathing exercises human problems human solutions. Hong shao rou orange foods cooking comfort. Sentimentality joy trends real world body life. Touch grass reminder.",
+        url: "articles/ai-doesnt-know-about-the-orange-foods/",
+        date: "2026-03-08"
+    },
+    {
         title: "You're not the problem. Your goals are trash.",
         description: "Your problem isn't \"motivation\"—it's vague, rigid, boring goals, and you can fix that by rewriting what you measure and actually rewarding yourself along the way.",
         content: "Goals are trash. Vague goals empty containers. SMART goals feelings emotional charge. Measure goals brittle systems movement flexible. Unmotivating goals discipline bribery treats massage dessert gadget takeout. Zero to one project iterate scope metrics. New year fresh start lazy terrible impossible progress. Be rich be fit eat better savings fitness health. Work out walking yoga movement furniture. Be healthier save money network beige wall slog. Treat milestone prototype win OKR performance review outcomes fun.",
