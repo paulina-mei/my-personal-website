@@ -213,6 +213,13 @@
             display: flex;
             flex-direction: column;
             gap: 0.5em;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--hover-color);
         }
 
         .blog-card .blog-meta {
@@ -228,10 +235,7 @@
             font-size: clamp(1.1rem, 1.5vw, 1.7rem);
             line-height: 1.1;
             color: var(--text-color);
-        }
-
-        .blog-card .blog-title:hover {
-            color: var(--hover-color);
+            transition: var(--transition);
         }
 
         .blog-card .blog-desc {
@@ -239,18 +243,6 @@
             line-height: 1.65;
             color: rgba(26, 26, 26, 0.65);
             flex-grow: 1;
-        }
-
-        .blog-card .blog-read {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            text-decoration: underline;
-            color: rgba(26,26,26,0.45);
-            margin-top: 0.5em;
-        }
-
-        .blog-card .blog-read:hover {
-            color: var(--hover-color);
         }
 
         @media (max-width: 900px) {
@@ -381,12 +373,11 @@
             const recentArticles = allArticles.slice(0, 3);
             recentArticles.forEach(article => {
                 const cardHTML = `
-                    <div class="blog-card">
+                    <a href="${article.url}" class="blog-card">
                         <span class="blog-meta">${formatDate(article.date)}</span>
-                        <a href="${article.url}" class="blog-title">${article.title}</a>
+                        <h3 class="blog-title">${article.title}</h3>
                         <p class="blog-desc">${article.description}</p>
-                        <a href="${article.url}" class="blog-read">Read →</a>
-                    </div>
+                    </a>
                 `;
                 blogGrid.insertAdjacentHTML('beforeend', cardHTML);
             });
